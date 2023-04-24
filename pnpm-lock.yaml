@@ -5,6 +5,7 @@ specifiers:
   '@fastify/caching': ^8.3.0
   '@fastify/cookie': ^8.3.0
   '@fastify/env': ^4.2.0
+  '@fastify/helmet': ^10.1.0
   '@fastify/oauth2': ^7.0.1
   '@fastify/sensible': ^5.0.0
   '@fastify/static': ^6.10.1
@@ -31,6 +32,7 @@ dependencies:
   '@fastify/caching': 8.3.0
   '@fastify/cookie': 8.3.0
   '@fastify/env': 4.2.0
+  '@fastify/helmet': 10.1.0
   '@fastify/oauth2': 7.0.1
   '@fastify/sensible': 5.2.0
   '@fastify/static': 6.10.1
@@ -312,6 +314,13 @@ packages:
     resolution: {integrity: sha512-ypZynRvXA3dibfPykQN3RB5wBdEUgSGgny8Qc6k163wYPLD4mEGEDkACp+00YmqkGvIm8D/xYoHajwyEdWD/eg==}
     dependencies:
       fast-json-stringify: 5.7.0
+    dev: false
+
+  /@fastify/helmet/10.1.0:
+    resolution: {integrity: sha512-v7QJPYf1uVcCwzyHzkDGcHTqDPscXj/61JKxOdvczyDPAKTxSeb9Sc2OBActXaj7zUELiAdgnkKkzNwmCNzBLQ==}
+    dependencies:
+      fastify-plugin: 4.5.0
+      helmet: 6.1.5
     dev: false
 
   /@fastify/oauth2/7.0.1:
@@ -1567,6 +1576,11 @@ packages:
 
   /hashlru/2.3.0:
     resolution: {integrity: sha512-0cMsjjIC8I+D3M44pOQdsy0OHXGLVz6Z0beRuufhKa0KfaD2wGwAev6jILzXsd3/vpnNQJmWyZtIILqM1N+n5A==}
+    dev: false
+
+  /helmet/6.1.5:
+    resolution: {integrity: sha512-UgAvdoG0BhF9vcCh/j0bWtElo2ZHHk6OzC98NLCM6zK03DEVSM0vUAtT7iR+oTo2Mi6sGelAH3tL6B/uUWxV4g==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /help-me/4.2.0:
