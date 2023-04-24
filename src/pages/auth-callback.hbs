@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+</head>
+<body>
+  <script>
+    // Get the access-token from the hash
+    const hash = window.location.hash
+      .substring(1)
+      .split('&')
+      .reduce((initial, item) => {
+        if (item) {
+          const parts = item.split('=');
+          initial[parts[0]] = decodeURIComponent(parts[1]);
+        }
+        return initial;
+      }, {});
+    
+    console.log(hash)
+    // Set the access-token to the local storage
+    window.localStorage.setItem('access-token', hash['access-token']);
+    // Post the hash to API
+    fetch('/auth/callback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(hash)
+    }).then(_ => {
+      // Redirect to the homepage
+      window.location.href = '/auth/profile';
+    })
+  </script>
+</body>
+</html>
