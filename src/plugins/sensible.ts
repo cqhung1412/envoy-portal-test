@@ -1,3 +1,4 @@
+import { SensibleOptions } from "@fastify/sensible";
 import fastifyPlugin from "fastify-plugin";
 
 /**
@@ -5,7 +6,7 @@ import fastifyPlugin from "fastify-plugin";
  *
  * @see https://github.com/fastify/fastify-sensible
  */
-export default fastifyPlugin(async function (fastify, opts) {
+export default fastifyPlugin<SensibleOptions>(async function (fastify, opts) {
   fastify.register(require("@fastify/sensible"), {
     errorHandler: true,
   });

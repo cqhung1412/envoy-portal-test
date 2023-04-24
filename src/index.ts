@@ -67,6 +67,7 @@ initialize();
 const listen = async () => {
   try {
     await server.ready();
+    server.swagger();
     server.listen(
       { port: parseInt(process.env.PORT as string) || 8080 },
       (err, address) => {
